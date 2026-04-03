@@ -1,13 +1,19 @@
 [package]
 name = "fxmac_rs"
+version = "0.2.1"
+edition = "2021"
 authors = ["xiaoluoyuan@163.com"]
+
 version = "0.2.2"
 edition = "2024"
 license = "GPL-2.0"
 description = "fxmac ethernet driver in Rust on PhytiumPi board."
 homepage = "https://github.com/elliott10/fxmac_rs.git"
-documentation = "https://github.com/elliott10/fxmac_rs/blob/main/README.md"
 repository = "https://github.com/elliott10/fxmac_rs.git"
+documentation = "https://docs.rs/fxmac_rs"
+readme = "README.md"
+keywords = ["ethernet", "driver", "phytium", "aarch64", "no_std"]
+categories = ["embedded", "hardware-support", "no-std"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

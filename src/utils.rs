@@ -1,3 +1,8 @@
+//! Architecture helpers for FXMAC on supported targets.
+//!
+//! This module provides low-level helpers (CPU ID, barriers, cache ops) used by
+//! the driver on aarch64 platforms.
+
 #[cfg(target_arch = "aarch64")]
 mod arch {
     use core::arch::asm;
@@ -94,7 +99,7 @@ mod arch {
     /// len: Length of the range to be invalidated in bytes.
     pub(crate) fn FCacheDCacheInvalidateRange(mut adr: u64, len: u64) {
         let end: u64 = adr + len;
-        adr = adr & (!CACHE_LINE_ADDR_MASK);
+        adr &= !CACHE_LINE_ADDR_MASK;
         let currmask: u32 = MFCPSR();
         MTCPSR(currmask | IRQ_FIQ_MASK);
         if (len != 0) {
@@ -113,7 +118,7 @@ mod arch {
     /// adr: 64bit start address of the range to be flush.
     pub(crate) fn FCacheDCacheFlushRange(mut adr: u64, len: u64) {
         let end: u64 = adr + len;
-        adr = adr & (!CACHE_LINE_ADDR_MASK);
+        adr &= !CACHE_LINE_ADDR_MASK;
         let currmask: u32 = MFCPSR();
         MTCPSR(currmask | IRQ_FIQ_MASK);
         if len != 0 {
@@ -127,7 +132,7 @@ mod arch {
         MTCPSR(currmask);
     }
 
-    use aarch64_cpu::registers::{CNTFRQ_EL0, CNTVCT_EL0, Readable};
+    use aarch64_cpu::registers::{Readable, CNTFRQ_EL0, CNTVCT_EL0};
 
     #[inline]
     pub fn now_tsc() -> u64 {
@@ -136,7 +141,7 @@ mod arch {
 
     #[inline]
     pub fn timer_freq() -> u64 {
-        CNTFRQ_EL0.get() as u64
+        CNTFRQ_EL0.get()
     }
 }
 
