@@ -21,7 +21,7 @@ pub(crate) const FXMAC_MAX_TYPE_ID: u32 = 4; /* Maxmum number of type id support
 pub(crate) const FXMAC_BD_ALIGNMENT: u32 = 64; /* Minimum buffer descriptor alignment on the local bus */
 
 pub(crate) const FXMAC_RX_BUF_ALIGNMENT: u32 = 4; /* Minimum buffer alignment when using options that impose
-                                                  alignment  restrictions on the buffer data on the local bus */
+alignment  restrictions on the buffer data on the local bus */
 
 pub(crate) const FXMAC_NWCTRL_OFFSET: u64 = 0x00000000; /* Network Control reg */
 pub(crate) const FXMAC_NWCFG_OFFSET: u64 = 0x00000004; /* Network Config reg */
@@ -328,7 +328,7 @@ pub(crate) const FXMAC_RXBUF_MULTIHASH_MASK: u32 = BIT(30); /* Multicast hashed 
 pub(crate) const FXMAC_RXBUF_UNIHASH_MASK: u32 = BIT(29); /* Unicast hashed frame */
 pub(crate) const FXMAC_RXBUF_EXH_MASK: u32 = BIT(27); /* buffer exhausted */
 pub(crate) const FXMAC_RXBUF_AMATCH_MASK: u32 = GENMASK(26, 25); /* Specific address \
-                                                                 matched */
+matched */
 pub(crate) const FXMAC_RXBUF_IDFOUND_MASK: u32 = BIT(24); /* Type ID matched */
 pub(crate) const FXMAC_RXBUF_IDMATCH_MASK: u32 = GENMASK(23, 22); /* ID matched mask */
 pub(crate) const FXMAC_RXBUF_VLAN_MASK: u32 = BIT(21); /* VLAN tagged */

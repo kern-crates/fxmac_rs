@@ -132,7 +132,7 @@ mod arch {
         MTCPSR(currmask);
     }
 
-    use aarch64_cpu::registers::{Readable, CNTFRQ_EL0, CNTVCT_EL0};
+    use aarch64_cpu::registers::{CNTFRQ_EL0, CNTVCT_EL0, Readable};
 
     #[inline]
     pub fn now_tsc() -> u64 {
@@ -167,8 +167,8 @@ mod arch {
     }
 }
 
-use alloc::boxed::Box;
 pub use self::arch::*;
+use alloc::boxed::Box;
 
 // 纳秒(ns)
 #[inline]

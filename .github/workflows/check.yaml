@@ -19,9 +19,15 @@ jobs:
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@master
         with:
-          toolchain: nightly-2025-01-18
-          components: rust-src, clippy, rustfmt
+          toolchain: nightly-2026-03-30
+          components: |
+            rust-src
+            clippy
+            rustfmt
           targets: ${{ matrix.targets }}
+
+      - name: Verify rustfmt is installed
+        run: rustup component list --installed | grep '^rustfmt'
 
       - name: Check rust version
         run: rustc --version --verbose

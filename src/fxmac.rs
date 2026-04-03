@@ -958,14 +958,16 @@ fn FXmacSetOptions(instance_p: &mut FXmac, options: u32, queue_num: u32) -> u32 
                 reg &= !FXMAC_DMACR_RXBUF_MASK;
 
                 rx_buf_size = instance_p.max_frame_size / FXMAC_RX_BUF_UNIT;
-                rx_buf_size += u32::from(!instance_p.max_frame_size.is_multiple_of(FXMAC_RX_BUF_UNIT));
+                rx_buf_size +=
+                    u32::from(!instance_p.max_frame_size.is_multiple_of(FXMAC_RX_BUF_UNIT));
 
                 reg |= (rx_buf_size << FXMAC_DMACR_RXBUF_SHIFT) & FXMAC_DMACR_RXBUF_MASK;
                 write_reg((FXMAC_IOBASE + FXMAC_DMACR_OFFSET) as *mut u32, reg);
             } else if queue_num < instance_p.config.max_queue_num {
                 let mut rx_buf_size: u32 = 0;
                 rx_buf_size = instance_p.max_frame_size / FXMAC_RX_BUF_UNIT;
-                rx_buf_size += u32::from(!instance_p.max_frame_size.is_multiple_of(FXMAC_RX_BUF_UNIT));
+                rx_buf_size +=
+                    u32::from(!instance_p.max_frame_size.is_multiple_of(FXMAC_RX_BUF_UNIT));
 
                 write_reg(
                     (FXMAC_IOBASE + FXMAC_RXBUFQX_SIZE_OFFSET(queue_num as u64)) as *mut u32,
@@ -1130,7 +1132,8 @@ fn FXmacClearOptions(instance_p: &mut FXmac, options: u32, queue_num: u32) -> u3
                 reg &= !FXMAC_DMACR_RXBUF_MASK;
 
                 rx_buf_size = instance_p.max_frame_size / FXMAC_RX_BUF_UNIT;
-                rx_buf_size += u32::from(!instance_p.max_frame_size.is_multiple_of(FXMAC_RX_BUF_UNIT));
+                rx_buf_size +=
+                    u32::from(!instance_p.max_frame_size.is_multiple_of(FXMAC_RX_BUF_UNIT));
 
                 reg |= (rx_buf_size << FXMAC_DMACR_RXBUF_SHIFT) & FXMAC_DMACR_RXBUF_MASK;
 
@@ -1138,7 +1141,8 @@ fn FXmacClearOptions(instance_p: &mut FXmac, options: u32, queue_num: u32) -> u3
             } else if (queue_num < instance_p.config.max_queue_num) {
                 let mut rx_buf_size: u32 = 0;
                 rx_buf_size = instance_p.max_frame_size / FXMAC_RX_BUF_UNIT;
-                rx_buf_size += u32::from(!instance_p.max_frame_size.is_multiple_of(FXMAC_RX_BUF_UNIT));
+                rx_buf_size +=
+                    u32::from(!instance_p.max_frame_size.is_multiple_of(FXMAC_RX_BUF_UNIT));
 
                 write_reg(
                     (FXMAC_IOBASE + FXMAC_RXBUFQX_SIZE_OFFSET(queue_num as u64)) as *mut u32,
