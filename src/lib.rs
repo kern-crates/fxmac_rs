@@ -99,6 +99,9 @@
 
 extern crate alloc;
 
+#[cfg(target_arch = "aarch64")]
+extern crate aarch64_cpu;
+
 #[cfg(feature = "debug")]
 #[macro_use]
 extern crate log;

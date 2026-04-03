@@ -168,7 +168,7 @@ mod arch {
 }
 
 use alloc::boxed::Box;
-pub use arch::*;
+pub use self::arch::*;
 
 // 纳秒(ns)
 #[inline]
