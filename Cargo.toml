@@ -1,7 +1,7 @@
 [package]
 name = "fxmac_rs"
 authors = ["xiaoluoyuan@163.com"]
-version = "0.2.0"
+version = "0.2.2"
 edition = "2024"
 license = "GPL-2.0"
 description = "fxmac ethernet driver in Rust on PhytiumPi board."

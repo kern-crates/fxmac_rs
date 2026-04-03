@@ -65,5 +65,5 @@ PHY: Motorcomm YT8521
 ![yt8521](doc/phtpi-eth.jpg)
 
 ## Reference
-* [phytium-standalone-sdk](https://gitee.com/phytium_embedded/phytium-standalone-sdk/tree/master) *sdk驱动的代码质量及逻辑写得一言难尽啊 *
+* [phytium-standalone-sdk](https://gitee.com/phytium_embedded/phytium-standalone-sdk/tree/master) _sdk驱动的代码质量及逻辑写得一言难尽啊_
 * [Linux 5.10](https://gitee.com/phytium_embedded/phytium-linux-kernel/blob/linux-5.10/drivers/net/ethernet/cadence/macb_main.c)
